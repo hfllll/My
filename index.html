@@ -1,20 +1,278 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/My/assets/LOGO-C5yWAU_C.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="MOSE Blockchain - Next-generation blockchain platform for high performance, security, and scalability" />
-    <meta name="keywords" content="blockchain, crypto, MOSE, DeFi, NFT, DAO" />
-    <title>MOSE Blockchain</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/My/assets/index-BUqii-Ct.js"></script>
-    <link rel="stylesheet" crossorigin href="/My/assets/index-BljiRl2E.css">
-  </head>
-  <body class="bg-background">
-    <div id="app"></div>
-  </body>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StPageFlip 翻页效果</title>
+    <script src="https://unpkg.com/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #book {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .page {
+            background: white;
+            padding: 30px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .page-cover {
+            background: linear-gradient(45deg, #2c3e50, #34495e);
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .page-cover h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .page-cover p {
+            font-size: 16px;
+            opacity: 0.8;
+        }
+        
+        .page h2 {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        .page p {
+            line-height: 1.8;
+            color: #555;
+            font-size: 16px;
+            margin-bottom: 15px;
+            text-indent: 2em;
+        }
+        
+        .page-number {
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
+            color: #999;
+            font-size: 14px;
+        }
+        
+        .controls {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+        }
+        
+        .btn:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div id="book">
+        <div class="page page-cover" data-density="hard">
+            <h1>四零语境</h1>
+            <p>一个美丽的翻页故事</p>
+        </div>
+        
+        <div class="page">
+            <h2>第一章：开始</h2>
+            <p>这是一个关于翻页效果的演示。StPageFlip库提供了非常逼真的翻页动画效果。</p>
+            <p>你可以通过鼠标拖拽页面角落来翻页，也可以点击页面边缘进行翻页操作。</p>
+            <p>这个库支持多种配置选项，包括页面大小、翻页时间、阴影效果等。</p>
+            <div class="page-number">1</div>
+        </div>
+        
+        <div class="page">
+            <h2>第二章：特性介绍</h2>
+            <p>StPageFlip具有以下特性：</p>
+            <p>• 逼真的3D翻页效果</p>
+            <p>• 支持触摸和鼠标操作</p>
+            <p>• 可自定义页面大小和样式</p>
+            <p>• 支持硬页面和软页面</p>
+            <p>• 响应式设计，适配不同屏幕</p>
+            <div class="page-number">2</div>
+        </div>
+        
+        <div class="page">
+            <h2>第三章：使用方法</h2>
+            <p>使用StPageFlip非常简单：</p>
+            <p>1. 引入page-flip库文件</p>
+            <p>2. 创建HTML页面结构</p>
+            <p>3. 初始化PageFlip对象</p>
+            <p>4. 加载页面内容</p>
+            <p>5. 监听翻页事件</p>
+            <div class="page-number">3</div>
+        </div>
+        
+        <div class="page">
+            <h2>第四章：星夜下的秘密</h2>
+            <p>夜幕低垂，星光如织，月光洒在林间小路上，映照出一片朦胧的光影。林若曦站在古树下，手中紧握着一封泛黄的信笺。</p>
+            <p><strong>"你相信命运吗？"</strong> 她低声呢喃，目光投向远方的星空。信中所述的秘密让她心跳加速，却又充满了未知的恐惧。</p>
+            <p>风轻轻吹过，树叶沙沙作响，仿佛在诉说一个古老的传说。她深吸一口气，决定踏上这条无人知晓的旅程……</p>
+            <div class="page-number">4</div>
+        </div>
+        
+        <div class="page page-cover" data-density="hard">
+            <h1>结束</h1>
+            <p>感谢阅读</p>
+        </div>
+    </div>
+    
+    <div class="controls">
+        <button class="btn" id="prevBtn">上一页</button>
+        <button class="btn" id="nextBtn">下一页</button>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 初始化PageFlip
+            const pageFlip = new St.PageFlip(document.getElementById('book'), {
+                width: 400,
+                height: 600,
+                size: 'stretch',
+                minWidth: 300,
+                maxWidth: 800,
+                minHeight: 400,
+                maxHeight: 1000,
+                drawShadow: true,
+                flippingTime: 1000,
+                usePortrait: true,
+                startZIndex: 0,
+                autoSize: false,
+                maxShadowOpacity: 0.5,
+                showCover: true,
+                mobileScrollSupport: true
+            });
+            
+            // 加载页面
+            pageFlip.loadFromHTML(document.querySelectorAll('.page'));
+            
+            // 获取控制按钮
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            // 更新按钮状态
+            function updateButtons() {
+                const currentPage = pageFlip.getCurrentPageIndex();
+                const totalPages = pageFlip.getPageCount();
+                
+                prevBtn.disabled = currentPage <= 0;
+                nextBtn.disabled = currentPage >= totalPages - 1;
+            }
+            
+            // 绑定按钮事件
+            prevBtn.addEventListener('click', () => {
+                pageFlip.flipPrev();
+            });
+            
+            nextBtn.addEventListener('click', () => {
+                pageFlip.flipNext();
+            });
+            
+            // 向小程序发送消息的函数
+            function sendMessageToMiniProgram(data) {
+                if (window.wx && window.wx.miniProgram) {
+                    window.wx.miniProgram.postMessage({ data: data });
+                } else {
+                    console.log('非小程序环境，消息:', data);
+                }
+            }
+            
+            // 监听翻页事件
+            pageFlip.on('flip', (e) => {
+                console.log('翻页事件:', e.data);
+                updateButtons();
+                // 向小程序发送翻页消息
+                sendMessageToMiniProgram({
+                    type: 'pageFlip',
+                    currentPage: e.data,
+                    totalPages: pageFlip.getPageCount()
+                });
+            });
+            
+            // 监听状态变化
+            pageFlip.on('changeState', (e) => {
+                console.log('状态改变:', e.data);
+                // 向小程序发送状态变化消息
+                sendMessageToMiniProgram({
+                    type: 'stateChange',
+                    state: e.data
+                });
+            });
+            
+            // 监听方向变化
+            pageFlip.on('changeOrientation', (e) => {
+                console.log('方向改变:', e.data);
+            });
+            
+            // 初始化按钮状态
+            setTimeout(() => {
+                updateButtons();
+            }, 100);
+            
+            // 监听来自小程序的消息
+            window.addEventListener('message', function(e) {
+                const data = e.data;
+                console.log('收到小程序消息:', data);
+                
+                if (data.type === 'prevPage') {
+                    pageFlip.flipPrev();
+                } else if (data.type === 'nextPage') {
+                    pageFlip.flipNext();
+                } else if (data.type === 'turnToPage') {
+                    pageFlip.flip(data.pageNumber);
+                }
+            });
+            
+            // 初始化完成后发送消息
+            sendMessageToMiniProgram({
+                type: 'ready',
+                currentPage: 0,
+                totalPages: pageFlip.getPageCount()
+            });
+        });
+    </script>
+</body>
 </html>
